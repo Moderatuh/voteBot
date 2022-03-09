@@ -1,11 +1,13 @@
+//do not use this build, probably doesnt work and im using it for testing.
 const puppeteer = require('puppeteer');
 
 (async () => {
-	const pollURL = 'https://poll.fm/11051204';
-	const answerId = 'PDI_answer50714388';
+	const pollURL = 'https://poll.fm/11062171';
+	const answerId = 'PDI_answer50750290';
 
-	const browser = await puppeteer.launch({ headless: false });
-	const page = await browser.newPage();
+	const browser = await puppeteer.launch({ headless: true });
+	const context = await browser.createIncognitoBrowserContext();
+	const page = await context.newPage();
 	await page.setViewport({
 		width: 1920,
 		height: 1080,
